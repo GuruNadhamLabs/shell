@@ -1,0 +1,98 @@
+:root {
+  --bg: #070b0f;
+  --panel: #0c1218;
+  --text: #d9e2e8;
+  --muted: #71808c;
+  --accent: #39ff88;
+  --border: #1d2a33;
+  --error: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top, #102019 0, transparent 38%),
+    var(--bg);
+  color: var(--text);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.terminal {
+  width: min(100%, 1000px);
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
+}
+
+.terminal-header {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border);
+  background: #0a1015;
+}
+
+.traffic-lights { display: flex; gap: 7px; width: 90px; }
+.traffic-lights span { width: 11px; height: 11px; border-radius: 50%; background: #33414a; }
+.traffic-lights span:first-child { background: #ff5f57; }
+.traffic-lights span:nth-child(2) { background: #febc2e; }
+.traffic-lights span:nth-child(3) { background: #28c840; }
+
+.title { flex: 1; text-align: center; color: #aeb9c0; font-size: 13px; }
+.status { width: 90px; text-align: right; color: var(--accent); font-size: 10px; }
+
+.output {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+.logo { color: var(--accent); font-size: clamp(7px, 1.35vw, 14px); line-height: 1.15; margin: 0 0 20px; }
+.welcome p { margin: 5px 0; color: var(--muted); }
+.accent { color: var(--accent); }
+
+.command-line { margin-top: 16px; }
+.command { color: white; }
+.result { color: #aebbc3; white-space: pre-wrap; }
+.error { color: var(--error); }
+
+.prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px 22px;
+}
+
+.prompt { color: var(--accent); white-space: nowrap; font-size: 14px; }
+#command-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  body { padding: 0; }
+  .terminal { min-height: 100vh; border: 0; border-radius: 0; }
+  .output { padding: 18px; }
+  .prompt-row { padding: 14px 18px 20px; }
+  .status { display: none; }
+}
