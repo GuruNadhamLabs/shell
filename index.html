@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberShell - a browser-based terminal simulator">
+  <title>CyberShell</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="terminal" aria-label="CyberShell terminal">
+    <header class="terminal-header">
+      <div class="traffic-lights"><span></span><span></span><span></span></div>
+      <div class="title">CyberShell</div>
+      <div class="status">● ONLINE</div>
+    </header>
+
+    <section id="output" class="output" aria-live="polite">
+      <div class="welcome">
+        <pre class="logo">  ____      _               ____  _          _ _
+ / ___|   _| |__   ___ _ __/ ___|| |__   ___| | |
+| |  | | | | '_ \ / _ \ '__\___ \| '_ \ / _ \ | |
+| |__| |_| | |_) |  __/ |   ___) | | | |  __/ | |
+ \____\__, |_.__/ \___|_|  |____/|_| |_|\___|_|_|
+       |___/</pre>
+        <p>Welcome to <strong>CyberShell</strong> — a browser-based terminal simulator.</p>
+        <p>Type <span class="accent">help</span> to see available commands.</p>
+      </div>
+    </section>
+
+    <form id="command-form" class="prompt-row" autocomplete="off">
+      <span class="prompt">guru@cybershell:~$</span>
+      <input id="command-input" aria-label="Terminal command" autofocus spellcheck="false">
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
